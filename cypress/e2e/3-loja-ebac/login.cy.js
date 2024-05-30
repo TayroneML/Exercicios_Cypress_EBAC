@@ -5,9 +5,9 @@ describe('Funcionalidade: Login', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta')
     })
 
-    afterEach(() => {
-      cy.screenshot()  
-    })
+    // afterEach(() => {
+    //   cy.screenshot()  
+    // })
 
     it('Deve fazer login com sucesso', () => {
         cy.get('#username').type('tay_teste@teste.com.br')
@@ -31,7 +31,4 @@ describe('Funcionalidade: Login', () => {
         cy.get('#main > div > div.woocommerce-notices-wrapper > ul > li').should('contain', 'Erro: A senha fornecida para o e-mail tay_teste@teste.com.br está incorreta.')
         cy.get('#main > div > div.woocommerce-notices-wrapper > ul > li').should('exist')
     })
-
-
-
 })
