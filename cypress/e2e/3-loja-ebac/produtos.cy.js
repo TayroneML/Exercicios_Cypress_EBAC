@@ -1,9 +1,10 @@
 /// <reference types="cypress" />
+const perfil = require ("../../fixtures/perfil.json")
 
 describe('Funcionalidade: Produtos', () => {
 
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/produtos/')
+        cy.visit('/produtos/')
     })
 
     it('Deve selecionar um produto da lista', () => {
@@ -18,4 +19,7 @@ describe('Funcionalidade: Produtos', () => {
 
     })
     
+    it('Deve fazer login com sucesso - Usando massa de dados', () => {
+        
+    });
 })
