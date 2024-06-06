@@ -12,12 +12,21 @@ class ProdutosPage {
         cy.get('.products > .row')
         .contains(nomeProduto)
         .click()  
-
-        cy.get('#tab-title-description > a').should('contain', 'Descrição')
     }
 
-    addProdutoCarrinho() {
+    visitarProduto(nomeProduto) {
+        //cy.visit(`produtos/${nomeProduto}`)
+        
+        const urlFormatada = nomeProduto.replace(/ /g, '-')
+        cy.visit(`produtos/${urlFormatada}`)
+    }
 
+    addProdutoCarrinho(tamanho, cor, quantidade) {
+        cy.get(`.button-variable-item-` + tamanho).click()
+        cy.get(`.button-variable-item-${cor}`).click()
+        cy.get('.input-text').clear()
+        cy.get('.input-text').type(quantidade)
+        cy.get('.single_add_to_cart_button').click()
     }
 }
 

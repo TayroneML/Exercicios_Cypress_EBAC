@@ -1,0 +1,22 @@
+[
+    {
+        "nomeProduto": "Ajax Full-Zip Sweatshirt",
+        "tamanho": "M",
+        "cor": "Red",
+        "quantidade": 1
+    },
+
+    {
+        "nomeProduto": "Aero Daily Fitness Tee",
+        "tamanho": "M",
+        "cor": "Black",
+        "quantidade": 1
+    },
+
+    {
+        "nomeProduto": "Ariel Roll Sleeve Sweatshirt",
+        "tamanho": "S",
+        "cor": "Green",
+        "quantidade": 3
+    }
+]
