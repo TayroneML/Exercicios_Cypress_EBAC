@@ -40,14 +40,19 @@ describe('Funcionalidade: Login', () => {
         cy.get('#customer_login > div:nth-child(1) > form > input.button').click()
 
         cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
-    });
+    })
 
-    it.only('Deve fazer login com sucesso - Usando fixture', () => {
+    it('Deve fazer login com sucesso - Usando fixture', () => {
         cy.fixture('perfil').then(dados => {
             cy.get('#username').type(dados.usuario, { log: false })
             cy.get('#password').type(dados.senha, { log: false })
         })
         cy.get('#customer_login > div:nth-child(1) > form > input.button').click()
         cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
-    });
+    })
+
+    it.only('Deve fazer login com sucesso - Usando Comandos customizados', () => {
+        cy.login('tay_teste@teste.com.br', 'abc123')
+        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
+    })
 })

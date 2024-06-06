@@ -1,5 +1,5 @@
 /// <reference types="cypress" />
-const perfil = require ("../../fixtures/perfil.json")
+
 
 describe('Funcionalidade: Produtos', () => {
 
@@ -18,8 +18,5 @@ describe('Funcionalidade: Produtos', () => {
         cy.get('#tab-title-description > a').should('contain', 'Descrição')
 
     })
-    
-    it('Deve fazer login com sucesso - Usando massa de dados', () => {
-        
-    });
+
 })
