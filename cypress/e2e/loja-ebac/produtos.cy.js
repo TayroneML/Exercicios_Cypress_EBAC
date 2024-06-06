@@ -43,7 +43,7 @@ describe('Funcionalidade: Produtos', () => {
         cy.get('.stock').should('contain', 'Fora de estoque')
     })
 
-    it.only('Deve adicionar produto ao carrinho', () => {
+    it('Deve adicionar produto ao carrinho', () => {
         cy.fixture('produtos').then(dados => {
             produtosPage.buscarProduto(dados[2].nomeProduto)
 

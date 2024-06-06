@@ -15,7 +15,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('#password').type('abc123')
         cy.get('#customer_login > div:nth-child(1) > form > input.button').click()
 
-        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
+        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tayQa (não é tayQa? Sair)')
     })
 
     it('Deve exibir uma mensagem de erro ao inserir usuário inválido', () => {
@@ -39,7 +39,7 @@ describe('Funcionalidade: Login', () => {
         cy.get('#password').type(perfil.senha)
         cy.get('#customer_login > div:nth-child(1) > form > input.button').click()
 
-        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
+        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tayQa (não é tayQa? Sair)')
     })
 
     it('Deve fazer login com sucesso - Usando fixture', () => {
@@ -48,11 +48,11 @@ describe('Funcionalidade: Login', () => {
             cy.get('#password').type(dados.senha, { log: false })
         })
         cy.get('#customer_login > div:nth-child(1) > form > input.button').click()
-        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
+        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tayQa (não é tayQa? Sair)')
     })
 
-    it.only('Deve fazer login com sucesso - Usando Comandos customizados', () => {
+    it('Deve fazer login com sucesso - Usando Comandos customizados', () => {
         cy.login('tay_teste@teste.com.br', 'abc123')
-        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tay_teste (não é tay_teste? Sair)')
+        cy.get('#main > div > div > p:nth-child(2)').should('contain', 'Olá, tayQa (não é tayQa? Sair)')
     })
 })
